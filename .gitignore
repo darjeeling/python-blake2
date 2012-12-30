@@ -1,0 +1,6 @@
+*.py[cod]
+MANIFEST
+dist
+build
+sdist
+pip-log.txt
