@@ -1,0 +1,2 @@
+include blake2/*.c
+include blake2/*.h

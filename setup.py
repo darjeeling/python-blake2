@@ -1,13 +1,13 @@
 from distutils.core import setup, Extension
  
 module1 = Extension('blake2',
-                sources = ['blake2/blake2module.c',"blake2/blake2b-ref.c","blake2-impl.h","blake2.h"],
+                sources = ['blake2/blake2module.c'],
                 extra_compile_args = ["-std=c99", "-Wall", "-pedantic"] )
 
  
 setup (name = 'blake2',
         packages=['blake2'],
-        version = '0.1',
+        version = '0.1.2',
         ext_modules = [module1],
         description = 'blake2 hash function module for python',
         license='Public Domain',
