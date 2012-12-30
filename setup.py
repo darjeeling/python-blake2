@@ -1,6 +1,6 @@
 from distutils.core import setup, Extension
  
-module1 = Extension('blake2', sources = ['src/blake2module.c',"src/blake2b-ref.c"],
+module1 = Extension('blake2', sources = ['blake2/blake2module.c',"blake2/blake2b-ref.c"],
                 extra_compile_args = ["-std=c99", "-Wall", "-pedantic"] )
  
 setup (name = 'blake2',
