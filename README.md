@@ -5,9 +5,18 @@ BLAKE2 is an improved version of BLAKE, one the finalists in the NIST SHA-3 comp
 
 Installation
 ------------
+blake2 package is uploaded to pypi. you can use 
+
+- easy_install blake2
+- pip install blake2
+
+Installation with source
+------------
 1. git clone https://github.com/darjeeling/python-blake2.git
 1. cd python-blake2
 1. python setup.py install
+
+
 
 Usage
 ----
