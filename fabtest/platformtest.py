@@ -24,5 +24,7 @@ def testblake2b(distfile):
                     lib_directory = run("ls | grep lib.")
                     with cd(lib_directory.strip()):
                         # execute python and get result
-                        blake2_result = run("""python -c 'import blake2;print blake2.blake2("blake2",key="blake2");' """)
-                        print env.host , lib_directory.strip() ,  blake2_result
+                        blake2b_result = run("""python -c 'import blake2;print blake2.blake2("blake2",key="blake2");' """)
+                        blake2s_result = run("""python -c 'import blake2;print blake2.blake2s("blake2",key="blake2");' """)
+                        print env.host , lib_directory.strip() ,  blake2b_result
+                        print env.host , lib_directory.strip() ,  blake2s_result

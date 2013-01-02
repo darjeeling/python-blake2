@@ -8,7 +8,7 @@ module1 = Extension('blake2',
  
 setup (name = 'blake2',
         packages=['blake2'],
-        version = '0.1.4',
+        version = '0.1.5',
         ext_modules = [module1],
         description = 'blake2 hash function module for python',
         license='Public Domain',

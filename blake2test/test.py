@@ -15,5 +15,15 @@ def blake2b():
     assert blake2.blake2("hello world", hashSize=4, key="hello world") == 'bbd7cc6e'
 
 
+@tests.test
+def blake2s():
+    """Test blake2s results"""
+    assert blake2.blake2s("blake2", key="blake2") == '9b2c152a9567b530af1dc6549e1f8b67a278b710a1512c92dca5236d27309f87'
+    assert blake2.blake2s("hello world", key="hello world") == '846d7f4e70f94df2b07e2f5d59d271d5b4627ab64cc0fc376f411448528bee49'
+    assert blake2.blake2s("hello world", hashSize=16, key="hello world") == '4e989fc7739d052dd93ec88962137c08'
+    assert blake2.blake2s("hello world", hashSize=4, key="hello world") == 'fef7f902'
+
+
+
 if __name__ == '__main__':
     tests.run()
