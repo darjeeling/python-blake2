@@ -12,7 +12,7 @@ static PyObject * blake2_func(PyObject *self, PyObject *args,  PyObject *keywds)
 
     char *data;
     long hashSize = BLAKE2B_OUTBYTES;
-    char *key;
+    char *key = "";
     int rawOutput = 1 ;
     static char *kwlist[] = {"data","hashSize", "key", "rawOutput", NULL};
 
