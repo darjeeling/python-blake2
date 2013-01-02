@@ -6,6 +6,7 @@ python:
 install:
 - pip install Attest
 script:
+- python setup.py install
 - python -mblake2test.test run
 notifications:
   irc:
