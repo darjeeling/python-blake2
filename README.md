@@ -20,6 +20,8 @@ Installation with source
 
 Usage
 ----
+**you shoud apply same key to get same hash.**
+**initialzed key shoud be given.**
 ```python
 import blake2
 blake2.blake2( data [, hashSize = 64,   key = "",  rawOutput = False ] )
