@@ -1,7 +1,7 @@
 from distutils.core import setup, Extension
  
 module1 = Extension('blake2',
-                sources = ['blake2/blake2module.c','blake2/blake2b-ref.c'],
+                sources = ['blake2/blake2module.c','blake2/blake2b-ref.c','blake2/blake2s-ref.c'],
                 include_dirs = ['blake2'],
                 extra_compile_args = ["-std=c99", "-Wall", "-pedantic"] )
 
