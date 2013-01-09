@@ -16,8 +16,15 @@ static PyObject * blake2b_func(PyObject *self, PyObject *args,  PyObject *keywds
     int rawOutput = 1 ;
     static char *kwlist[] = {"data","hashSize", "key", "rawOutput", NULL};
 
-    if (!PyArg_ParseTupleAndKeywords(args, keywds, "s|ish", kwlist, &data, &hashSize, &key, &rawOutput))
-        return NULL;
+    if (!PyArg_ParseTupleAndKeywords(args, keywds, "z|ish", kwlist, &data, &hashSize, &key, &rawOutput)){
+	Py_INCREF(Py_None);
+	return Py_None;
+    }
+
+    if( NULL == data){
+	Py_INCREF(Py_None);
+	return Py_None;
+    }
 
     char outputHash[ hashSize ];
     int result ;
@@ -32,7 +39,8 @@ static PyObject * blake2b_func(PyObject *self, PyObject *args,  PyObject *keywds
 
     if ( ! ((  hashSize  > 0 ) && ( hashSize <= 64 ))){
         PyErr_SetString(Blake2HashSizeError, "hashSize error");
-        return NULL;
+	Py_INCREF(Py_None);
+	return Py_None;
     }	
 
 
@@ -60,8 +68,15 @@ static PyObject * blake2s_func(PyObject *self, PyObject *args,  PyObject *keywds
     int rawOutput = 1 ;
     static char *kwlist[] = {"data","hashSize", "key", "rawOutput", NULL};
 
-    if (!PyArg_ParseTupleAndKeywords(args, keywds, "s|ish", kwlist, &data, &hashSize, &key, &rawOutput))
-        return NULL;
+    if (!PyArg_ParseTupleAndKeywords(args, keywds, "z|ish", kwlist, &data, &hashSize, &key, &rawOutput)){
+	Py_INCREF(Py_None);
+	return Py_None;
+    }
+
+    if( NULL == data){
+	Py_INCREF(Py_None);
+	return Py_None;
+    }
 
     char outputHash[ hashSize ];
     int result ;
@@ -76,7 +91,8 @@ static PyObject * blake2s_func(PyObject *self, PyObject *args,  PyObject *keywds
 
     if ( ! ((  hashSize  > 0 ) && ( hashSize <= 32 ))){
         PyErr_SetString(Blake2HashSizeError, "hashSize error");
-        return NULL;
+	Py_INCREF(Py_None);
+	return Py_None;
     }	
 
 

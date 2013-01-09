@@ -13,6 +13,7 @@ def blake2b():
     assert blake2.blake2("hello world", hashSize=32, key="hello world") == '177a8d7754e0aaa6645179c6c9933c3c57a4880e91223f56ded5d3e3cd7144dd'
     assert blake2.blake2("hello world", hashSize=16, key="hello world") == '8fe7d57f5c53d8afd00f552269502b81'
     assert blake2.blake2("hello world", hashSize=4, key="hello world") == 'bbd7cc6e'
+    assert blake2.blake2(None) == None
 
 
 @tests.test
@@ -22,6 +23,7 @@ def blake2s():
     assert blake2.blake2s("hello world", key="hello world") == '846d7f4e70f94df2b07e2f5d59d271d5b4627ab64cc0fc376f411448528bee49'
     assert blake2.blake2s("hello world", hashSize=16, key="hello world") == '4e989fc7739d052dd93ec88962137c08'
     assert blake2.blake2s("hello world", hashSize=4, key="hello world") == 'fef7f902'
+    assert blake2.blake2(None) == None
 
 
 

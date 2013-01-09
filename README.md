@@ -25,6 +25,8 @@ Usage
 ```python
 import blake2
 blake2.blake2( data [, hashSize = 64,   key = "",  rawOutput = False ] )
+blake2.blake2b( data [, hashSize = 64,   key = "",  rawOutput = False ] )
+blake2.blake2s( data [, hashSize = 32,   key = "",  rawOutput = False ] )
 ```
 
 
