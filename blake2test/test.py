@@ -25,7 +25,7 @@ def blake2s():
     assert blake2.blake2s("hello world", hashSize=16, key="hello world") == '4e989fc7739d052dd93ec88962137c08'
     assert blake2.blake2s("hello world", hashSize=4, key="hello world") == 'fef7f902'
     assert blake2.blake2s("hello\x00world", key="hello\x00world") == '36429945e82aec7853fd2bd1c7349a65e4457db81c059b287f7a859e3b26e3f4'
-    assert blake2.blake2(None) == None
+    assert blake2.blake2s(None) == None
 
 
 
