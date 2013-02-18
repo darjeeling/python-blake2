@@ -11,12 +11,14 @@ static PyObject * blake2b_func(PyObject *self, PyObject *args,  PyObject *keywds
 {
 
     char *data;
+    int data_length;
+    int key_length ;
     long hashSize = BLAKE2B_OUTBYTES;
     char *key = "";
     int rawOutput = 1 ;
     static char *kwlist[] = {"data","hashSize", "key", "rawOutput", NULL};
 
-    if (!PyArg_ParseTupleAndKeywords(args, keywds, "z|ish", kwlist, &data, &hashSize, &key, &rawOutput)){
+    if (!PyArg_ParseTupleAndKeywords(args, keywds, "z#|is#h", kwlist, &data, &data_length, &hashSize, &key, &key_length, &rawOutput)){
 	Py_INCREF(Py_None);
 	return Py_None;
     }
@@ -28,14 +30,6 @@ static PyObject * blake2b_func(PyObject *self, PyObject *args,  PyObject *keywds
 
     char outputHash[ hashSize ];
     int result ;
-    int data_length = strlen(data);
-    int key_length ;
-    if( NULL == key ){
-	 key_length = 0;
-    }
-    else {
-	key_length = strlen(key);
-    }
 
     if ( ! ((  hashSize  > 0 ) && ( hashSize <= 64 ))){
         PyErr_SetString(Blake2HashSizeError, "hashSize error");
@@ -63,12 +57,14 @@ static PyObject * blake2s_func(PyObject *self, PyObject *args,  PyObject *keywds
 {
 
     char *data;
+    int data_length;
+    int key_length ;
     long hashSize = BLAKE2S_OUTBYTES;
     char *key = "";
     int rawOutput = 1 ;
     static char *kwlist[] = {"data","hashSize", "key", "rawOutput", NULL};
 
-    if (!PyArg_ParseTupleAndKeywords(args, keywds, "z|ish", kwlist, &data, &hashSize, &key, &rawOutput)){
+    if (!PyArg_ParseTupleAndKeywords(args, keywds, "z#|is#h", kwlist, &data, &data_length, &hashSize, &key, &key_length, &rawOutput)){
 	Py_INCREF(Py_None);
 	return Py_None;
     }
@@ -80,14 +76,6 @@ static PyObject * blake2s_func(PyObject *self, PyObject *args,  PyObject *keywds
 
     char outputHash[ hashSize ];
     int result ;
-    int data_length = strlen(data);
-    int key_length ;
-    if( NULL == key ){
-	 key_length = 0;
-    }
-    else {
-	key_length = strlen(key);
-    }
 
     if ( ! ((  hashSize  > 0 ) && ( hashSize <= 32 ))){
         PyErr_SetString(Blake2HashSizeError, "hashSize error");
