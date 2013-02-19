@@ -12,7 +12,7 @@ static PyObject * blake2b_func(PyObject *self, PyObject *args,  PyObject *keywds
 
     char *data;
     int data_length;
-    int key_length ;
+    int key_length = 0;
     long hashSize = BLAKE2B_OUTBYTES;
     char *key = "";
     int rawOutput = 1 ;
@@ -58,7 +58,7 @@ static PyObject * blake2s_func(PyObject *self, PyObject *args,  PyObject *keywds
 
     char *data;
     int data_length;
-    int key_length ;
+    int key_length = 0;
     long hashSize = BLAKE2S_OUTBYTES;
     char *key = "";
     int rawOutput = 1 ;
